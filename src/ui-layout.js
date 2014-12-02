@@ -56,6 +56,10 @@ angular.module('ui.layout', [])
           var afterContainer = processedContainers.afterContainer;
 
           if(!beforeContainer.collapsed && !afterContainer.collapsed) {
+            // Calculate offset from document top/left and remove it from the last position
+            var offset = ctrl.movingSplitbar.element.parent().offset()[ctrl.sizeProperties.flowProperty];
+            lastPos = lastPos - offset;
+            
             // calculate container positons
             var difference = ctrl.movingSplitbar[position] - lastPos;
             var newPosition = ctrl.movingSplitbar[position] - difference;
