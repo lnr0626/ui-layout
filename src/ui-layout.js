@@ -18,8 +18,8 @@ angular.module('ui.layout', [])
     ctrl.bounds = $element[0].getBoundingClientRect();
     ctrl.isUsingColumnFlow = opts.flow === 'column';
     ctrl.sizeProperties = !ctrl.isUsingColumnFlow ?
-    { sizeProperty: 'height', offsetName: 'offsetHeight', flowProperty: 'top', oppositeFlowProperty: 'bottom', mouseProperty: 'clientY', flowPropertyPosition: 'y' } :
-    { sizeProperty: 'width', offsetName: 'offsetWidth', flowProperty: 'left', oppositeFlowProperty: 'right', mouseProperty: 'clientX', flowPropertyPosition: 'x' };
+    { sizeProperty: 'height', offsetName: 'offsetHeight', flowProperty: 'top', oppositeFlowProperty: 'bottom', mouseProperty: 'pageY', flowPropertyPosition: 'y' } :
+    { sizeProperty: 'width', offsetName: 'offsetWidth', flowProperty: 'left', oppositeFlowProperty: 'right', mouseProperty: 'pageX', flowPropertyPosition: 'x' };
 
     $element
       // Force the layout to fill the parent space
