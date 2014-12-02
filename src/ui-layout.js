@@ -417,6 +417,10 @@ angular.module('ui.layout', [])
       return null;
     };
 
+    $scope.$watch(function() {
+      return $element[0].getBoundingClientRect()[ctrl.sizeProperties.sizeProperty];
+    }, ctrl.updateDisplay);
+
     return ctrl;
   }])
 
